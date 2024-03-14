@@ -1,13 +1,38 @@
+import {
+  AdaptivityProvider,
+  ConfigProvider,
+  AppRoot,
+  SplitLayout,
+  SplitCol,
+  View,
+  Panel,
+  PanelHeader,
+  Header,
+  Group,
+  SimpleCell,
+  usePlatform,
+  Cell,
+  PanelHeaderBack,
+  Search,
+  FormItem,
+  Input,
+  Button,
+} from '@vkontakte/vkui';
+import '@vkontakte/vkui/dist/vkui.css';
+
 import { useEffect, useRef, useState } from 'react'
 import styles from './App.module.css'
 import { baseUrlAge, baseUrlFact, btnDefaultValue, btnDefaultValueAge, btnErrorValue, btnLoadingValue } from './utils/constants';
+import { Icon28CommentOutline, Icon28FaceIdOutline } from '@vkontakte/icons';
 
 let controller: AbortController, signal;
 function App() {
+  const platform = usePlatform();
+  const [activePanel, setActivePanel] = useState('mainPanel');
 
   const [fact, setFact] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [hasError, setHasError] = useState<boolean>(false);
+  const [, setIsLoading] = useState<boolean>(false);
+  const [, setHasError] = useState<boolean>(false);
   const [btnValue, setBtnValue] = useState<string>(btnDefaultValue);
   const inputFactRef = useRef<HTMLInputElement>(null);
   
@@ -100,6 +125,64 @@ function App() {
     return () => clearTimeout(timeout)
 
   }, [username])
+
+  return (
+    <AppRoot>
+      <SplitLayout header={platform !== 'vkcom' && <PanelHeader delimiter="none" />}>
+        <SplitCol autoSpaced>
+          <View activePanel={activePanel}>
+          <Panel id="mainPanel">
+            <PanelHeader>Важные мелочи</PanelHeader>
+            <Group>
+              <Cell
+                expandable="auto"
+                before={<Icon28CommentOutline />}
+                onClick={() => setActivePanel('factsPanel')}
+              >
+                Интересные факты
+              </Cell>
+              <Cell
+                expandable="auto"
+                before={<Icon28FaceIdOutline />}
+                onClick={() => setActivePanel('AgePanel')}
+              >
+                Мой возраст
+              </Cell>
+            </Group>
+          </Panel>
+          <Panel id="factsPanel">
+          <PanelHeader
+            delimiter="spacing"
+            before={<PanelHeaderBack onClick={() => setActivePanel('mainPanel')} />}
+          >
+            Интересные факты
+          </PanelHeader>
+          <Group>
+            <form onSubmit={e => e.preventDefault()} >
+              <FormItem>
+                <Input
+                  getRef={inputFactRef} 
+                  type='text'
+                  value={fact}
+                  onChange={e => setFact(e.target.value)}
+                  placeholder="Узнайте интересный факт..."
+                />
+              </FormItem>  
+              <FormItem>
+                <Button 
+                  size="l"
+                  stretched
+                  onClick={handleOnClickFact}>{btnValue}
+                </Button>
+              </FormItem>
+            </form>
+          </Group>
+        </Panel>
+          </View>
+        </SplitCol>
+      </SplitLayout>
+    </AppRoot>
+  );
 
   return (
     <main className={styles.main}>
