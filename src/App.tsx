@@ -92,6 +92,13 @@ function App() {
     } else {
       btnAgeRef.current?.removeAttribute('disabled');
     }
+    const timeout = setTimeout(() => {
+      if(username !== '' && username.match(/[a-z]/i)) {
+        handleOnClickAge();
+      }
+    }, 3000)
+    return () => clearTimeout(timeout)
+
   }, [username])
 
   return (
