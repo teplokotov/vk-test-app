@@ -1,0 +1,22 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.form {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  height: 40px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.input {
+  min-width: 500px;
+}
