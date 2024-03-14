@@ -1,14 +1,19 @@
 .main {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
+  gap: 20px;
+  padding-top: 40px;
 }
 
-.form {
+.formFacts {
   padding: 20px;
   display: flex;
   gap: 10px;
+  border: 1px solid #888;
+  border-radius: 20px;
 }
 
 .button {
@@ -19,4 +24,12 @@
 
 .input {
   min-width: 500px;
+}
+
+.formAge {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  border: 1px solid #888;
+  border-radius: 20px;
 }
