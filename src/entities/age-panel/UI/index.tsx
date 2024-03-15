@@ -88,7 +88,7 @@ function AgePanel({ id } : TProps) {
         delimiter="spacing"
         before={<PanelHeaderBack onClick={() => currentPanel.setActivePanel('mainPanel')} />}
       >
-        Интересные факты
+        Мой возраст
       </PanelHeader>
       <Group>
         <form onSubmit={e => e.preventDefault()} >
