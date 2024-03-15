@@ -1,30 +1,67 @@
-# React + TypeScript + Vite
+# Тестовое задание INFINITE SYNERGY
+[![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![VKUI](https://img.shields.io/badge/vkui-%23007ACC.svg?style=for-the-badge&logo=vkui&logoColor=white)](https://vkcom.github.io/VKUI/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![image]()](https://teplokotov.github.io/is-test-app/)
 
-Currently, two official plugins are available:
+🌐 [https://teplokotov.github.io/vk-test-app/](https://teplokotov.github.io/vk-test-app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Одностраничное веб-приложение состоит двух панно (panel):
 
-## Expanding the ESLint configuration
+<ol>
+	<li>Панно "Интересные факты" содержит блок с кнопкой и текстовым полем. По нажатию на кнопку выполняется запрос к <a href="https://catfact.ninja/fact" target="_blank">https://catfact.ninja/fact</a>. Полученный факт записывается в текстовое поле. Курсор устанавливается после первого слова.</li>
+	<li>Панно "Мой возраст" содержит форму с текстовым полем и кнопкой отправки. Пользователь вводит своё имя в текстовом поле. По истечении 3-х секунд после ввода имени или при отправке формы выполняется запрос к <a href="https://api.agify.io/" target="_blank">https://api.agify.io/</a> с введенным именем в параметре <em>name</em>. Ответом будет возраст человека, определенный по имени. Этот ответ отображается под текстовым полем.<br>
+	<ul>
+		<li>Предусмотрено предотвращение дублирующих запросов (запрос с таким же именем не отправляется).</li>
+		<li>Предусмотрена отправка следующего запроса до того, как текущий был обработан. Запрос прерывается, чей ответ нам уже не нужен (частый кейс при медленном интернете).</li>
+	</ul>
+	</li>
+</ol>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<ul>
+	<li>В работе использована библиотека VKUI.</li>
+	<li>Реализована валидация поля ввода имени (имя может состоять только из латинских букв).</li>
+	<li>Приложение также развернуто в виде мини-приложения ВКонтакте.</li>
+</ul>
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Запуск проекта в 🖐 5 шагов
+1. Клонируйте проект
+```bash
+git clone https://github.com/teplokotov/vk-test-app.git
+```
+2. Перейдите в директорию проекта
+```bash
+cd vk-test-app
+```
+3. Установите модули
+```bash
+npm install
+```
+4. Запустите проект
+```bash
+npm run dev
+```
+5. Откройте страницу
+```bash
+http://localhost:5173
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Используемые технологии
+- VS Code
+- Git Bash
+- Vite
+- React 18.2
+- TypeScript
+- VKUI
+
+### Полезные материалы
+
+- <a href="https://vkcom.github.io/VKUI/">Документация VKUI</a>
+- <a href="https://dev.vk.com/ru/mini-apps/getting-started">Как создать свое мини-приложение ВКонтакте</a>
+- <a href="https://feature-sliced.design/ru/">Документация Feature-Sliced Design</a>
+
+## Контакты
+- Филипп Добриков
+- philipp.dobrikov@yandex.ru
+- https://t.me/hello_philipp
