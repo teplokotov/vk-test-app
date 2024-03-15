@@ -11,10 +11,13 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "vkdeploy": "vite build && vk-miniapps-deploy"
   },
   "dependencies": {
     "@vkontakte/icons": "^2.103.0",
+    "@vkontakte/vk-bridge": "^2.14.1",
+    "@vkontakte/vk-bridge-react": "^1.0.1",
     "@vkontakte/vkui": "^6.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -25,6 +28,7 @@
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "@vitejs/plugin-react": "^4.2.1",
+    "@vkontakte/vk-miniapps-deploy": "^0.1.6",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
