@@ -1,9 +1,9 @@
-# Тестовое задание INFINITE SYNERGY
+# Тестовое задание VK
 [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![VKUI](https://img.shields.io/badge/vkui-%23007ACC.svg?style=for-the-badge&logo=vkui&logoColor=white)](https://vkcom.github.io/VKUI/)
 
-[![image]()](https://teplokotov.github.io/is-test-app/)
+[![image](https://github.com/teplokotov/vk-test-app/assets/118915923/65d30fd6-ec08-409c-9b04-e88db24c278b)](https://teplokotov.github.io/is-test-app/)
 
 🌐 [https://teplokotov.github.io/vk-test-app/](https://teplokotov.github.io/vk-test-app/)
 
